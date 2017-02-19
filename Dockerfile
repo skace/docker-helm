@@ -3,8 +3,7 @@ MAINTAINER Nordstrom Platform Team "techk8s@nordstrom.com"
 
 ENV HELM_TARBALL helm-v2.2.0-linux-amd64.tar.gz
 ADD https://storage.googleapis.com/kubernetes-helm/$HELM_TARBALL .
-RUN tar xvzf $HELM_TARBALL
-ENV PATH=./linux-amd64/:$PATH
+RUN tar --strip-components 1 -xvzC /bin -f $HELM_TARBALL linux-amd64/helm
 RUN helm init --client-only
 RUN rm $HELM_TARBALL
 
