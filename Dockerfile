@@ -1,4 +1,4 @@
-FROM quay.io/nordstrom/baseimage-ubuntu:16.04
+FROM quay.io/nordstrom/kubectl:1.5.1-1
 MAINTAINER Nordstrom Platform Team "techk8s@nordstrom.com"
 
 ENV HELM_TARBALL helm-v2.2.0-linux-amd64.tar.gz
